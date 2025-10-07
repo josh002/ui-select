@@ -4,7 +4,8 @@
   "author": "http://github.com/angular-ui/ui-select/graphs/contributors",
   "homepage": "http://github.com/angular-ui/ui-select",
   "repository": {
-    "url": "git://github.com/angular-ui/ui-select.git"
+    "type": "git",
+    "url": "https://github.com/josh002/ui-select.git"
   },
   "style": "dist/select.css",
   "version": "0.19.8",
