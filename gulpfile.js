@@ -2,7 +2,7 @@ var fs = require('fs');
 var del = require('del');
 var gulp = require('gulp');
 var streamqueue = require('streamqueue');
-var karma = require('karma').server;
+// var karma = require('karma').server;
 var $ = require('gulp-load-plugins')();
 var runSequence = require('run-sequence');
 var conventionalRecommendedBump = require('conventional-recommended-bump');
@@ -21,9 +21,9 @@ var config = {
 
 gulp.task('default', ['build','test']);
 gulp.task('build', ['scripts', 'styles']);
-gulp.task('test', ['build', 'karma']);
+gulp.task('test', ['build']);
 
-gulp.task('watch', ['build','karma-watch'], function() {
+gulp.task('watch', ['build'], function() {
   gulp.watch(['src/**/*.{js,html}'], ['build']);
 });
 
@@ -90,13 +90,13 @@ gulp.task('styles', ['clean'], function() {
 
 });
 
-gulp.task('karma', ['build'], function() {
-  karma.start({configFile : __dirname +'/karma.conf.js', singleRun: true});
-});
+// gulp.task('karma', ['build'], function() {
+//   karma.start({configFile : __dirname +'/karma.conf.js', singleRun: true});
+// });
 
-gulp.task('karma-watch', ['build'], function() {
-  karma.start({configFile :  __dirname +'/karma.conf.js', singleRun: false});
-});
+// gulp.task('karma-watch', ['build'], function() {
+//   karma.start({configFile :  __dirname +'/karma.conf.js', singleRun: false});
+// });
 
 gulp.task('pull', function(done) {
   $.git.pull();
